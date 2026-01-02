@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mem0-modified"
+version = "0.1.0"
+description = "Modified mem0 package for healthcare AI agents"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    # Add your dependencies here from the original mem0 requirements
+    # Example:
+    # "openai>=1.0.0",
+    # "python-dotenv",
+    # etc.
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+]
