@@ -1,23 +1,33 @@
 [build-system]
-requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mem0-modified"
+name = "mem0ai"
 version = "0.1.0"
 description = "Modified mem0 package for healthcare AI agents"
-readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
-    # Add your dependencies here from the original mem0 requirements
-    # Example:
-    # "openai>=1.0.0",
-    # "python-dotenv",
-    # etc.
+    "anthropic",
+    "cohere",
+    "google-generativeai",
+    "groq",
+    "litellm",
+    "mistralai",
+    "ollama",
+    "openai",
+    "together",
+    "boto3",
+    "chromadb",
+    "qdrant-client",
+    "pymilvus",
+    "psycopg2-binary",
+    "azure-ai-inference",
+    "fastembed",
 ]
 
-[project.optional-dependencies]
-dev = [
-    "pytest",
-    "black",
-]
+[tool.setuptools]
+packages = ["llms", "proxy", "client", "graphs", "memory", "configs", "embeddings", "vector_stores"]
+
+[tool.setuptools.package-dir]
+"" = "mem0"
