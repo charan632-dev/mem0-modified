@@ -9,7 +9,7 @@ description = "Modified mem0 package for healthcare AI agents"
 requires-python = ">=3.8"
 dependencies = [
     "anthropic",
-    "cohere",
+    "cohere", 
     "google-generativeai",
     "groq",
     "litellm",
@@ -26,8 +26,6 @@ dependencies = [
     "fastembed",
 ]
 
-[tool.setuptools]
-packages = ["llms", "proxy", "client", "graphs", "memory", "configs", "embeddings", "vector_stores"]
-
-[tool.setuptools.package-dir]
-"" = "mem0"
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["llms*", "proxy*", "client*", "graphs*", "memory*", "configs*", "embeddings*", "vector_stores*"]
