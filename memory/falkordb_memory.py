@@ -1,5 +1,5 @@
 import logging
-
+import json
 from mem0.memory.utils import format_entities
 
 try:
@@ -369,7 +369,11 @@ class MemoryGraph:
                 .get("arguments", {})
                 .get("entities", [])
             )
-
+        ######### changes made by us
+        elif extracted_entities['content']:
+            entities_json = json.loads(extracted_entities['content'])
+            entities = entities_json.get('entities',[])
+        ###############
         entities = self._remove_spaces_from_entities(entities)
         logger.debug("Extracted entities: %s", entities)
         return entities
