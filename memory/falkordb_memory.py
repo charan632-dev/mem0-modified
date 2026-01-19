@@ -362,6 +362,7 @@ class MemoryGraph:
             tools=_tools,
         )
 
+        print(f"extracted_entities:{extracted_entities}")
         entities = []
         if extracted_entities.get("tool_calls"):
             entities = (
@@ -370,7 +371,7 @@ class MemoryGraph:
                 .get("entities", [])
             )
         ######### changes made by us
-        print(f"extracted_entities:{extracted_entities}")
+        
         elif extracted_entities['content']:
             entities_json = json.loads(extracted_entities['content'])
             entities = entities_json.get('entities',[])
